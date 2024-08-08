@@ -10,7 +10,7 @@ import play from '../src/images/plays.png'
 
 
 export const Home = () => {
-    const data =[{"image":arijit,"name":"Arijit Singh","artist":"artist"}]
+    const data =[{"image":arijit,"name":"Arijit Singh","artist":"Artist"},{"image":arijit,"name":"Arijit Singh","artist":"Artist"},{"image":arijit,"name":"Arijit Singh","artist":"Artist"},{"image":arijit,"name":"Arijit Singh","artist":"Artist"},{"image":arijit,"name":"Arijit Singh","artist":"Artist"}]
 
     const[isclick,setisclick]=useState(0);
     const[ishover, setishover]=useState(0);
@@ -45,16 +45,18 @@ export const Home = () => {
          </div>
       </div>
       <div className='artist'><h>Popular Artist</h>
+      <div className='total'>
        {data.map((x)=>{return(
-       <div className='total'>
+       
        <div className='box' onMouseEnter={()=>{setishover(true)}} onMouseLeave={()=>{setishover(false)}}>
         <div className='photo'><img className='artpic' src={x.image}/> <img className={ishover?'show':'hide'} src={play}/></div>
         <div className='artistname'>{x.name}</div>
         <div className='job'>{x.artist}</div>
        </div>
-       </div>
+      
        )})
 }
+</div>
       </div>
       </div>
 

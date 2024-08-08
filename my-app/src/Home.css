@@ -148,7 +148,10 @@
     border-radius: 50%;
     object-fit: fill;
     transform: translateY(-18px);
-    transition-timing-function: ease-in-out;   
+       
+}
+.job{
+    color: rgb(179 179 179);
 }
 
 .hide{
@@ -165,4 +168,10 @@
     height: 180px;
     object-fit: inherit;
     border-radius: 50%;
+}
+.total{
+    position: relative;
+    left: 2px;
+    display: flex;
+    gap: 10px;
 }
