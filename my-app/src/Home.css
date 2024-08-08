@@ -139,17 +139,20 @@
     font-weight: 500;
 }
 
-.play{
+.show{
     width: 70px;
     height: 70px;
     position: relative;
     left: 100px;
-    bottom: 80px;
+    bottom: 70px;
     border-radius: 50%;
     object-fit: fill;
+    transform: translateY(-18px);
+    transition-timing-function: ease-in-out;   
 }
-.play:hover{
-    transform: translateY(-5px)
+
+.hide{
+    display: none;
 }
 
 .photo{
