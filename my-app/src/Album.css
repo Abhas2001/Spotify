@@ -111,7 +111,9 @@
     overflow: hidden;
 }
 .artist{
-    padding: 20px;
+    padding: 8px;
+    position: relative;
+    top: 29px;
     min-height: 800px;
 }
 .artistheader{
@@ -161,10 +163,6 @@
     display: none;
 }
 
-.photo{
-    width: 185px;
-    height: 190px;
-}
 
 .artpic {
     width: 180px;
@@ -173,19 +171,43 @@
     border-radius: 50%;
 }
 .total{
-    position: relative;
-    left: 2px;
+    
     display: flex;
     gap: 10px;
+    position: relative;
+    right: 2px;
 }
 .chevron{
     display: flex;
     gap: 10px;
     position: relative;
     top: 5px;
+    cursor: pointer;
 }
 .chev{
     width: 32px;
     height: 32px;
     object-fit: contain;
+}
+.tablehead{
+    display: flex;
+    justify-content: space-between;
+}
+.tablehead button{
+    padding: 0px;
+    margin: 0px;
+    max-width: 64px;
+    height: 18px;
+    background-color: #191919;
+    border: #191919;
+    color: #b3b3b3;
+    font-size: 14px;
+    font-family:sans-serif;
+    position: relative;
+    top: 40px;
+    left: -40px;
+}
+.tablehead button:hover{
+    border-bottom: 2px solid #b3b3b3;
+    cursor: pointer;
 }
