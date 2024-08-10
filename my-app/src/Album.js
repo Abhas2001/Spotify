@@ -18,7 +18,7 @@ const Album = ({album=[{}]}) => {
        {album.map((item)=>{return(
        
        <div className='box' onMouseEnter={()=>{setishover(true)}} onMouseLeave={()=>{setishover(false)}}>
-        <div className='photo'><img className='artpic' src={item.image}/> <img className={ishover?'show':'hide'} src={play}/></div>
+        <div className='photo'><img className='artpic' src={item.image}/> </div>
         <div className='artistname'>{item.name}</div>
         <div className='job'>{item.artist}</div>
        </div>

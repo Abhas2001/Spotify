@@ -1,7 +1,9 @@
 import React from 'react'
 import "./Show.css";
 import { useState } from 'react';
-import play from '../src/images/plays.png'
+import Body from './Body';
+import Header from './Header';
+
 
 
 const Show = ({user=[{}]}) => {
@@ -10,18 +12,8 @@ const Show = ({user=[{}]}) => {
   
   return (
     <div className='total'>
-        {
-            user.map((item)=>{
-                return(
-                    <div className='box' onMouseEnter={()=>{setishover(true)}} onMouseLeave={()=>{setishover(false)}}>
-                    <div className='photo'><img className='artpic' src={item.image}/> <img className={ishover?'show':'hide'} src={play}/></div>
-                    <div className='artistname'>{item.name}</div>
-                    <div className='job'>{item.artist}</div>
-                    </div>
-                )
-            })
-        }
-
+      <Header/>
+   
 
 </div>
   )
