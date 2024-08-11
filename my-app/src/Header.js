@@ -9,6 +9,7 @@ import backlt from '../src/images/backclicked.png';
 import left from '../src/images/left.png';
 import right from '../src/images/right.png';
 import Body from './Body'
+import { Link } from "react-router-dom"
 
 const Header = () => {
     const[isclick,setisclick]=useState(0);
@@ -21,7 +22,7 @@ const Header = () => {
        <div className='firstbox'>
          <div className='spotlogo'>
             <img className='spologo' src={logo}/>
-            <p>Spotify</p>
+            <p> <Link to='/albums'>Spotify</Link></p>
          </div>
          <div className='logo'onClick={()=> setisclick(isclick==0 ? 1:0)}>
             { isclick == 0 ?
@@ -29,7 +30,7 @@ const Header = () => {
          <img className='clickedlogo' src={clickedhm}/>
             }
 
-            <p>Home</p>
+            <p><Link to='/body' >Home</Link></p>
          </div>
          <div className='logo'>
          <img className='spologo' src={search}/>
@@ -60,8 +61,8 @@ const Header = () => {
 
       </div>
       <div >
-
-   <Body/>
+{/* 
+   <Body/> */}
       </div>
      
         

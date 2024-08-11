@@ -4,19 +4,19 @@ import {Home} from "./Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Album from './Album';
 import Show from './Show';
+import Body from './Body';
 
 function App() {
   return (
+  
     
-    <BrowserRouter>
-     <Routes>
-   <Route path='/' element= {<Home/>} />
-   <Route path='/contact' element= {<Show/>} />
-    
-    
-    
-    </Routes>
-    </BrowserRouter>
+   <Routes>
+     
+     <Route path='/' element={<Home/>}/>
+     <Route path='/albums' element={<Home/>} />
+     <Route path='/body' element={<Body/>} />
+     </Routes>
+ 
 
   );
 }
