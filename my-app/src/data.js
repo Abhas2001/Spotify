@@ -1,0 +1,1 @@
+export const data =[{name:"abhas"},{name:"ayush"},{name:"sohaib"},{name:"laddua"},{name:"anjali"},{name:"rrr"}];

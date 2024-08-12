@@ -10,8 +10,11 @@ import left from '../src/images/left.png';
 import right from '../src/images/right.png';
 import Body from './Body'
 import { Link } from "react-router-dom"
+import Search from './Search';
 
-const Header = () => {
+
+const Header = (value) => {
+   
     const[isclick,setisclick]=useState(0);
     const[ishover, setishover]=useState(0);
     const[isShow,setisShow]=useState(0);
@@ -49,6 +52,7 @@ const Header = () => {
         <div className='chevron'>
             <div><img onClick={()=>{setisShow(0)}} className='chev' src={isShow==1?backlt:left}/></div>
             <div><img className='chev' src={right}/></div>
+            <Search val={value}/>
          </div>
          <div className='btns'>
             <button className='sign'>SignUp</button>
