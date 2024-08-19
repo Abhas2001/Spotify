@@ -11,6 +11,8 @@ import right from '../src/images/right.png';
 import Body from './Body'
 import { Link } from "react-router-dom"
 import Search from './Search';
+import Content from './Content';
+
 
 
 const Header = (value) => {
@@ -40,19 +42,15 @@ const Header = (value) => {
             <p>Search</p>
          
          </div>
-         <div className='secc'>
-           <div className='ylib'> 
-            YourLibrary
-           </div>
-
-</div>
+      
       </div>
       
-      <div className='secbox' >
+      <div className='secbox'>
         <div className='chevron'>
             <div><img onClick={()=>{setisShow(0)}} className='chev' src={isShow==1?backlt:left}/></div>
             <div><img className='chev' src={right}/></div>
             <Search val={value}/>
+         
          </div>
          <div className='btns'>
             <button className='sign'>SignUp</button>
@@ -61,12 +59,18 @@ const Header = (value) => {
          </div>
          
       </div>
+    
       
 
       </div>
-      <div >
-{/* 
-   <Body/> */}
+      <div className='library' >
+      <div className='secc'>
+           <div className='ylib'> 
+            YourLibrary
+           </div>
+
+</div>
+      <Content/>
       </div>
      
         

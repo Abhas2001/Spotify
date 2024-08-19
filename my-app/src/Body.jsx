@@ -42,18 +42,18 @@ const Body = () => {
                 <div className='box'>
                   
                  <div className='img'>
-                    {x.name}
+                    {x.artists}
                   </div>
                
                   
                   <div className='name'>
-                    {x.name}
+                    {x.artists}
                   </div>
              
 
 
                   <div className='postion'>
-                   {x.name}
+                   {x.artists}
                   </div>
              
                 </div>

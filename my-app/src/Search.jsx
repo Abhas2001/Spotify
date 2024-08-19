@@ -11,7 +11,7 @@ export const getfilterdata=(query,data)=>{
     }
     else
 
-    return data.filter(song=>song.name.includes(query));
+    return data.filter(song=>song.artists.includes(query));
 
 }
 
@@ -42,18 +42,18 @@ const Search = () => {
              <div className='box'>
                
               <div className='img'>
-                 {x.name}
+                 {x.artists}
                </div>
             
                
                <div className='name'>
-                 {x.name}
+                 {x.artists}
                </div>
           
 
 
                <div className='postion'>
-                {x.name}
+                {x.artists}
                </div>
           
              </div>
