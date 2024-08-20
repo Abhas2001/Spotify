@@ -12,10 +12,22 @@ import Body from './Body'
 import { Link } from "react-router-dom"
 import Search from './Search';
 import Content from './Content';
+import Section from './Section';
+
+ 
+
 
 
 
 const Header = (value) => {
+
+  const[option , setoption]=useState(false);
+  const handleOptionChange = () => {
+   setoption(!option);
+  };
+
+  console.log(option);
+
    
     const[isclick,setisclick]=useState(0);
     const[ishover, setishover]=useState(0);
@@ -47,7 +59,7 @@ const Header = (value) => {
       
       <div className='secbox'>
         <div className='chevron'>
-            <div><img onClick={()=>{setisShow(0)}} className='chev' src={isShow==1?backlt:left}/></div>
+            <div> <img onClick={handleOptionChange} className='chev' src={isShow==1?backlt:left}/></div>
             <div><img className='chev' src={right}/></div>
             <Search val={value}/>
          
@@ -70,7 +82,12 @@ const Header = (value) => {
            </div>
 
 </div>
-      <Content/>
+ {option === false ?
+    <Section onOptionChange={handleOptionChange}/>
+    :
+    <Content onOptionChange={handleOptionChange}/>
+
+ }
       </div>
      
         
