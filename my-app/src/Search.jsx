@@ -4,35 +4,26 @@ import { data } from './data';
 import './Search.css'
 
 
-export const getfilterdata=(query,data)=>{
-
-    if(!query){
-        return data;
-    }
-    else
-
-    return data.filter(song=>song.artists.includes(query));
-
-}
 
 
 
 
-const Search = () => {
-    const [query, setquery] = useState("");
+
+const Search = (props) => {
+   
       
 
 
 
 
-    const filtereditems =getfilterdata(query,data);
+    const filtereditems =props.onInputchange(props.onQuerychange(),data);
    
    
   
     return (
         <div className='bg-zinc-400 w-10 h-10'>
-            <input  onChange={e=>setquery(e.target.value)} className='w-25 h-12' />
-          { query.length>0 && (
+            <input  onChange={props.onQuerychange()} className='w-25 h-12' />
+          { props.onQuerychange().length>0 && (
              
              <div className='total'>
              { 
@@ -41,9 +32,7 @@ const Search = () => {
              
              <div className='box'>
                
-              <div className='img'>
-                 {x.artists}
-               </div>
+            
             
                
                <div className='name'>
@@ -52,9 +41,6 @@ const Search = () => {
           
 
 
-               <div className='postion'>
-                {x.artists}
-               </div>
           
              </div>
             );

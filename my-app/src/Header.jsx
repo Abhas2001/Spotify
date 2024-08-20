@@ -13,6 +13,8 @@ import { Link } from "react-router-dom"
 import Search from './Search';
 import Content from './Content';
 import Section from './Section';
+import Popularalbum from './Popularalbum';
+import { data } from './data';
 
  
 
@@ -22,11 +24,30 @@ import Section from './Section';
 const Header = (value) => {
 
   const[option , setoption]=useState(false);
+  const[albums , setalbums]=useState(false);
+  const[serch, setserch] = useState(false);
+  const [query, setquery] = useState("");
+  const getfilterdata=(query,data)=>{
+
+   if(!query){
+       return data;
+   }
+   else
+
+   return data.filter(song=>song.artists.includes(query));
+
+}
+ const querychange = (e) =>{
+   setquery(e.target.value)
+ }
   const handleOptionChange = () => {
    setoption(!option);
   };
+  const handlealbums = () => {
+   setalbums(!option);
+  };
 
-  console.log(option);
+  console.log(albums);
 
    
     const[isclick,setisclick]=useState(0);
@@ -49,7 +70,7 @@ const Header = (value) => {
 
             <p><Link to='/body' >Home</Link></p>
          </div>
-         <div className='logo'>
+         <div className='logo' onClick={()=>setserch(!serch)}>
          <img className='spologo' src={search}/>
             <p>Search</p>
          
@@ -59,9 +80,14 @@ const Header = (value) => {
       
       <div className='secbox'>
         <div className='chevron'>
-            <div> <img onClick={handleOptionChange} className='chev' src={isShow==1?backlt:left}/></div>
+            <div><img onClick={handleOptionChange} className='chev' src={isShow==1?backlt:left}/></div>
             <div><img className='chev' src={right}/></div>
-            <Search val={value}/>
+            { serch==true ?
+            <Search onQuerychange={querychange} onInputchange={getfilterdata}/>
+            :
+            null
+}
+
          
          </div>
          <div className='btns'>
@@ -82,10 +108,12 @@ const Header = (value) => {
            </div>
 
 </div>
- {option === false ?
-    <Section onOptionChange={handleOptionChange}/>
-    :
+ {option === false && albums === false ?
+    <Section onOptionChange={handleOptionChange} onAlbumschange={handlealbums}/>
+    : option === true ?
     <Content onOptionChange={handleOptionChange}/>
+    : 
+    <Popularalbum/>
 
  }
       </div>
