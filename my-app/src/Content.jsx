@@ -1,10 +1,10 @@
 import React from 'react'
 import './Content.css'
 
-const Content = () => {
+const Content = (props) => {
 
 
-  const arr= [{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"}]
+  
   return (
     <div >
 
@@ -19,7 +19,7 @@ const Content = () => {
         </div>
         </div>
         <div className='box'>
-          { arr.map((k)=>{
+          { props.data.map((k)=>{
             return(
           <div className='Section'>
              {k.img}

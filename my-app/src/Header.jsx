@@ -23,6 +23,10 @@ import { data } from './data';
 
 const Header = (value) => {
 
+   data.map((k)=>{
+      console.log(k.artists);
+   })
+
   const[option , setoption]=useState(false);
   const[albums , setalbums]=useState(false);
   const[serch, setserch] = useState(false);
@@ -37,9 +41,8 @@ const Header = (value) => {
    return data.filter(song=>song.artists.includes(query));
 
 }
- const querychange = (e) =>{
-   setquery(e.target.value)
- }
+console.log(getfilterdata(query,data));
+
   const handleOptionChange = () => {
    setoption(!option);
   };
@@ -47,7 +50,7 @@ const Header = (value) => {
    setalbums(!option);
   };
 
-  console.log(albums);
+
 
    
     const[isclick,setisclick]=useState(0);
@@ -83,7 +86,7 @@ const Header = (value) => {
             <div><img onClick={handleOptionChange} className='chev' src={isShow==1?backlt:left}/></div>
             <div><img className='chev' src={right}/></div>
             { serch==true ?
-            <Search onQuerychange={querychange} onInputchange={getfilterdata}/>
+            <Search query={query} setquery={setquery} onInputchange={getfilterdata}/>
             :
             null
 }
@@ -108,11 +111,12 @@ const Header = (value) => {
            </div>
 
 </div>
- {option === false && albums === false ?
+
+ {option === false && albums === false && query.length===0?
     <Section onOptionChange={handleOptionChange} onAlbumschange={handlealbums}/>
-    : option === true ?
-    <Content onOptionChange={handleOptionChange}/>
-    : 
+    : option === true && query.length===0 ?
+    <Content data={getfilterdata(query,data)} onOptionChange={handleOptionChange}/>
+    : query.length===0&&
     <Popularalbum/>
 
  }

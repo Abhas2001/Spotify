@@ -20,7 +20,9 @@ const Section = (props) =>{
    
      const arr= [{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"},{"img":"img"}]
 return (
-  <div >
+  <div>
+
+    <div className='maincontainer'>
 
     <div className='contentbody'>
        <div className='popular'>
@@ -70,7 +72,7 @@ return (
 
       </div>
     </div>
-    
+    </div>
   </div>
 )
 }

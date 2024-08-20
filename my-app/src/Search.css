@@ -1,18 +1,24 @@
 .total{
-    width: 100%;
+    width: 1090px;
     height: 500px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px;
+    grid-template-columns: 1fr;
+    padding-top: 0px;
+    position: relative;
+    left: -101px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    top: 61px;
+    background-color: #191919;
+    scrollbar-color: #ffffffca #191919;
 }
 .box{
-    width: 160px;
-    height: 239px;
+    width: 100%;
+    height: 29px;
     background-color: #191919;
     color: white;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     gap: 10px;
 }
