@@ -2,27 +2,35 @@
     background-color: #121212;
     color: white;
     width: 1115px;
-    height: 49vh;
+    height: 80vh;
     position: relative;
     top: -80px;
+    overflow-y: scroll;
+   
 }
 .popular{
     display: flex;
     justify-content: space-between;
     padding: 30px;
+    
 }
 
 .artists{
     font-size: 24px;
     font:bolder;
 }
-.box{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    padding: 20px;
-}
+
+
 .Section{
     width: 150px;
     height: 30vh;
     border: 1px solid white;
+}
+.boxedd{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 96%;
+    min-height: 20vh;
+    background-color: #191919;
+    padding: 20px;
 }

@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './Section.css';
+
 
 const Section = (props) =>{
 
@@ -34,7 +36,7 @@ return (
         <button onClick={handleButtonClick}>Show all</button>
       </div>
       </div>
-      <div className='box'>
+      <div className='boxedd'>
         { arr.map((k)=>{
           return(
         <div className='Section'>
@@ -44,22 +46,18 @@ return (
         })
 
 }
-
       </div>
-    </div>
 
-
-    <div className='contentbody'>
-       <div className='popular'>
+      <div className='popular'>
       <div className='artists'>
-        Popular albums
+        Popular artists
       </div>
 
       <div>
-        <button onClick={handlealbums}>Show all</button>
+        <button onClick={handleButtonClick}>Show all</button>
       </div>
       </div>
-      <div className='box'>
+      <div className='boxedd'>
         { arr.map((k)=>{
           return(
         <div className='Section'>
@@ -69,9 +67,18 @@ return (
         })
 
 }
-
       </div>
+      
     </div>
+
+
+    
+
+
+
+  
+     
+   
     </div>
   </div>
 )
